@@ -6,10 +6,15 @@ pipeline{
 	}
 
 	stages {
+		stage('gitclone') {
+			steps {
+				git branch: 'main', url: 'https://github.com/ByDena9/apache-dockerfile.git'
+			}
+		}
 		stage('Build') {
 
 			steps {
-				sh 'sudo docker build -t raulmoess/apacherauljenkinsfile:latest .'
+				sh 'sudo docker build -t marcodena/apachemarcos:latest .'
 			}
 		}
 
@@ -21,7 +26,7 @@ pipeline{
 
 		stage('Push') {
 			steps {
-				sh 'sudo docker push raulmoess/apacherauljenkinsfile:latest'
+				sh 'sudo docker push marcodena/apachemarcos:latest'
 			}
 		}
 	}
