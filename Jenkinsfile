@@ -9,7 +9,7 @@ pipeline{
 		stage('Build') {
 
 			steps {
-				sh 'sudo docker build -t marcodena/apachemarcos:latest .'
+				sh 'sudo docker build -t bydena/apachemarcos:latest .'
 			}
 		}
 
@@ -21,7 +21,7 @@ pipeline{
 
 		stage('Push') {
 			steps {
-				sh 'sudo docker push marcodena/apachemarcos:latest'
+				sh 'sudo docker push bydena/apachemarcos:latest'
 			}
 		}
 	}
