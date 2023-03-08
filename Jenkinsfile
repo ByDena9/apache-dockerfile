@@ -6,11 +6,6 @@ pipeline{
 	}
 
 	stages {
-		stage('gitclone') {
-			steps {
-				git branch: 'main', url: 'https://github.com/ByDena9/apache-dockerfile.git'
-			}
-		}
 		stage('Build') {
 
 			steps {
